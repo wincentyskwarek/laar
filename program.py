@@ -20,13 +20,16 @@ while True:
     print("Pętla")
 # Obsługa aparatury sterującej
     # Odczyt z odbiornika i zapis do listy kanałów
-    res = ibus_in.read()
-    if (res[0] == 1):
-        print (IBus.normalize(res[2]))
-        
-    else:
-        print ("Status offline {}".format(res[0]))
-        #time.sleep(0.5)
+    try:
+        res = ibus_in.read()
+        if (res[0] == 1):
+            print (IBus.normalize(res[2]))
+            
+        else:
+            print ("Status offline {}".format(res[0]))
+            #time.sleep(0.5)
+    except IOError as e:
+        print(f"Wystąpił błąd: {e}")
 #Obsługa modułu GPS
 '''
     try:

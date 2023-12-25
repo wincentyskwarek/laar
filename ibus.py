@@ -67,9 +67,10 @@ class IBus ():
             else:
                 self.ch[0] = -1
                 
+        raise IOError("Nie udało się odczytać danych z UART")
         # Reach here then timed out
-        self.ch[0] = -1
-        return self.ch
+        #self.ch[0] = -1
+        #return self.ch
     
     
     # Convert to meaningful values - eg. -100 to 100
