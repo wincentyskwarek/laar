@@ -17,7 +17,6 @@ session = gps.gps(mode=gps.WATCH_ENABLE)
 #IBus.normalize(res[6], type="dial")),
 
 while True:
-    print("Pętla")
 # Obsługa aparatury sterującej
     # Odczyt z odbiornika i zapis do listy kanałów
     res = ibus_in.read()
@@ -30,12 +29,13 @@ while True:
 
 #Obsługa modułu GPS
     try:
-        report = session.next()
-        # Czekaj na raporty TPV (Time Position Velocity)
-        if report['class'] == 'TPV':
-            if hasattr(report, 'lat') and hasattr(report, 'lon'):
-                print("Latitude: ", report.lat)
-                print("Longitude: ", report.lon)
+        if session.waiting():  # Sprawdza, czy są dostępne nowe dane
+            report = session.next()
+            # Czekaj na raporty TPV (Time Position Velocity)
+            if report['class'] == 'TPV':
+                if hasattr(report, 'lat') and hasattr(report, 'lon'):
+                    print("Latitude: ", report.lat)
+                    print("Longitude: ", report.lon)
 
     except KeyError:
         pass
