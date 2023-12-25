@@ -55,6 +55,12 @@ class IBus():
 
         self.ch[0] = -1  # Błąd: nie odczytano danych po 10 próbach
         return self.ch
+    @staticmethod
+    def normalize (value, type="default"):
+        if (type == "dial"):
+            return ((value - 1000) / 10)
+        else:
+            return ((value - 1500) / 5)
 
 '''
 class IBus ():
@@ -101,7 +107,7 @@ class IBus ():
         # Reach here then timed out
         self.ch[0] = -1
         return self.ch
-'''
+
     
     # Convert to meaningful values - eg. -100 to 100
     # Typical use for FS-iA6B
@@ -116,3 +122,4 @@ class IBus ():
             return ((value - 1500) / 5)
         
     
+'''
