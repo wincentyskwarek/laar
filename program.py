@@ -17,6 +17,7 @@ session = gps.gps(mode=gps.WATCH_ENABLE)
 #IBus.normalize(res[6], type="dial")),
 
 while True:
+    print("Pętla")
 # Obsługa aparatury sterującej
     # Odczyt z odbiornika i zapis do listy kanałów
     res = ibus_in.read()
