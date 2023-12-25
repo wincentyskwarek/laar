@@ -23,8 +23,40 @@ import serial
 # 1 = new values
 # -1 = failed to receive data old values sent
 # -2 = checksum error
+class IBus():
+    
+    def __init__(self, uart_num="/dev/ttyS0", baud=115200, num_channels=6):
+        self.uart_num = uart_num
+        self.baud = baud
+        self.uart = serial.Serial(self.uart_num, self.baud, timeout=0.1)  # Ustawienie limitu czasu
+        self.num_channels = num_channels
+        self.ch = [0] * (self.num_channels + 1)
+    
+    def read(self):
+        for _ in range(10):
+            buffer = bytearray(31)
+            char = self.uart.read(1)
+            if not char:  # Jeśli nie odczytano danych w wyznaczonym czasie
+                self.ch[0] = -1  # Błąd odczytu danych
+                return self.ch  # Przerwanie działania funkcji
 
+            if char == b'\x20':
+                self.uart.readinto(buffer)
+                checksum = 0xffdf
+                for i in range(29):
+                    checksum -= buffer[i]
+                if checksum == (buffer[30] << 8) | buffer[29]:
+                    self.ch[0] = 1
+                    for i in range(1, self.num_channels + 1):
+                        self.ch[i] = (buffer[(i*2)-1] + (buffer[i*2] << 8))                    
+                    return self.ch
+                else:
+                    self.ch[0] = -2  # Błąd sumy kontrolnej
 
+        self.ch[0] = -1  # Błąd: nie odczytano danych po 10 próbach
+        return self.ch
+
+'''
 class IBus ():
     
     # Number of channels (FS-iA6B has 6)
@@ -32,7 +64,7 @@ class IBus ():
         self.uart_num = uart_num
         self.baud = baud
         #self.uart = UART(self.uart_num, self.baud)
-        self.uart = serial.Serial(self.uart_num, self.baud)
+        self.uart = serial.Serial(self.uart_num, self.baud, timeout=0.1)
         self.num_channels = num_channels
         # ch is channel value
         self.ch = []
@@ -65,13 +97,11 @@ class IBus ():
                     # Checksum error
                     self.ch[0] = -2
             else:
-                self.ch[0] = -1
-                
-        raise IOError("Nie udało się odczytać danych z UART")
+                self.ch[0] = -1         
         # Reach here then timed out
-        #self.ch[0] = -1
-        #return self.ch
-    
+        self.ch[0] = -1
+        return self.ch
+'''
     
     # Convert to meaningful values - eg. -100 to 100
     # Typical use for FS-iA6B
