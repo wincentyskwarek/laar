@@ -29,7 +29,6 @@ while True:
         #time.sleep(0.5)
 
 #Obsługa modułu GPS
-'''
     try:
         report = session.next()
         # Czekaj na raporty TPV (Time Position Velocity)
@@ -45,4 +44,3 @@ while True:
     except StopIteration:
         session = None
         print("GPSD has terminated")
-'''
