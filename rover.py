@@ -37,32 +37,38 @@ class Rover():
         self.wheel4.start(0)
 
     def go(self, angle, speed):
-        r=Rover.b/(2*math.sin(angle))
-        omega=self.speed/r
-        #Wheel 1
-        angle1=math.atan(Rover.b/(2*(r-Rover.a/2)))
-        r1=Rover.b/(2*math.sin(angle1))
-        speed1=omega*r1
-        #Wheel 2
-        angle2=math.atan(Rover.b/(2*(r+Rover.a/2)))
-        r2=Rover.b/(2*math.sin(angle2))
-        speed2=omega*r2
-        #Wheel 3
-        angle3=math.atan(0/(2*(r-Rover.a/2)))
-        r3=r-Rover.a/2
-        speed3=omega*r3
-        #Wheel 4
-        angle4=math.atan(0/(2*(r+Rover.a/2)))
-        r4=r+Rover.a/2
-        speed4=omega*r4
-        #Wheel 5
-        angle5=-math.atan(Rover.b/(2*(r-Rover.a/2)))
-        r5=-Rover.b/(2*math.sin(angle5))
-        speed5=omega*r5
-        #Wheel 6
-        angle6=-math.atan(Rover.b/(2*(r+Rover.a/2)))
-        r6=-Rover.b/(2*math.sin(angle6))
-        speed6=omega*r6
+        if angle!=0:
+            r=Rover.b/(2*math.sin(angle))
+            omega=self.speed/r
+            #Wheel 1
+            angle1=math.atan(Rover.b/(2*(r-Rover.a/2)))
+            r1=Rover.b/(2*math.sin(angle1))
+            speed1=omega*r1
+            #Wheel 2
+            angle2=math.atan(Rover.b/(2*(r+Rover.a/2)))
+            r2=Rover.b/(2*math.sin(angle2))
+            speed2=omega*r2
+            #Wheel 3
+            angle3=math.atan(0/(2*(r-Rover.a/2)))
+            r3=r-Rover.a/2
+            speed3=omega*r3
+            #Wheel 4
+            angle4=math.atan(0/(2*(r+Rover.a/2)))
+            r4=r+Rover.a/2
+            speed4=omega*r4
+            #Wheel 5
+            angle5=-math.atan(Rover.b/(2*(r-Rover.a/2)))
+            r5=-Rover.b/(2*math.sin(angle5))
+            speed5=omega*r5
+            #Wheel 6
+            angle6=-math.atan(Rover.b/(2*(r+Rover.a/2)))
+            r6=-Rover.b/(2*math.sin(angle6))
+            speed6=omega*r6
+        else:
+            speed1=speed
+            speed2=speed
+            speed3=speed
+            speed4=speed
         if speed>0:
             GPIO.output(self.dirPin,GPIO.HIGH)
         else:
