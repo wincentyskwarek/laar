@@ -5,7 +5,7 @@ class Rover():
     a=0.5               # Rozstaw kół [m]
     b=1                 # Rozstaw osi [m]
     servoAngle = 180    # Maksymalny kąt obrotu serwa
-    MaxSpeed = 300      # Maksymalna prędkość z obliczeń 316
+    maxSpeed = 300      # Maksymalna prędkość z obliczeń 316
     def __init__(self, w15, w26, w3, w4, k1, k2, k5, k6, dirPin):
         self.frequency = 100 #częstotliwość PWM
         self.dirPin=dirPin
