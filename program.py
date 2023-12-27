@@ -1,6 +1,6 @@
 import time
 from ibus import IBus
-import rover
+from rover import Rover
 import gps
 import RPi.GPIO as GPIO
 
