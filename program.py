@@ -1,6 +1,8 @@
 import time
 from ibus import IBus
 import gps
+from RPIO import PWM
+
 
 #Uruchomienie IBUS
 ibus_in = IBus()
@@ -25,7 +27,6 @@ while True:
         
     else:
         print ("Status offline {}".format(res[0]))
-        #time.sleep(0.5)
 
 #Obsługa modułu GPS
     try:

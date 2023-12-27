@@ -2,10 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"name": "laar-1",
-			"path": "../laar-1"
 		}
 	],
 	"settings": {}
