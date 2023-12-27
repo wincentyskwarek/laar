@@ -29,9 +29,9 @@ while True:
     res = ibus_in.read()
     if (res[0] == 1):
         predkosc=IBus.normalize(res[2])
-	print(predkosc))
-	predkosc=max(0, predkosc)
-	pwm.ChangeDutyCycle(predkosc)
+        print(predkosc))
+        predkosc=max(0, predkosc)
+        pwm.ChangeDutyCycle(predkosc)
     else:
         print ("Status offline {}".format(res[0]))
 
