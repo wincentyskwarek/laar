@@ -44,7 +44,7 @@ while True:
         kat=IBus.normalize(res[2])
         predkosc=IBus.normalize(res[3])
         lazik.go(kat,predkosc)
-        print(predkosc)
+        #print(predkosc)
         
     else:
         print ("Status offline {}".format(res[0]))

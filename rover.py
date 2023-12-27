@@ -85,6 +85,7 @@ class Rover():
         self.wheel3.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
         # Wheel 4
         self.wheel4.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
+        print(abs((speed1*Rover.maxSpeed/100)//30), abs((speed2*Rover.maxSpeed/100)//30), abs((speed3*Rover.maxSpeed/100)//30), abs((speed4*Rover.maxSpeed/100)//30) )
     @staticmethod
     def normalize (value):
         return 0
