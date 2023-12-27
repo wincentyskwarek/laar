@@ -43,7 +43,7 @@ while True:
     if (res[0] == 1):
         kat=IBus.normalize(res[2])
         predkosc=IBus.normalize(res[3])
-        lazik.go(predkosc, kat)
+        lazik.go(kat,predkosc)
         print(predkosc)
         
     else:
