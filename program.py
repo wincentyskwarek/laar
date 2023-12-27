@@ -34,7 +34,7 @@ GPSTXPin = 12       # Pin RXD od odbiornika GPS
 GPSRXPin = 13       # Pin TXD od odbiornika GPS
 
 #Definicja obiektu klasy lazik
-lazik = rover(LPrzodTyl, PPrzodTyl, LSrodek, PSrodek, LKatPrzod, PKatPrzod, LKatTyl, PKatTyl, DirectionPin)
+lazik = Rover(LPrzodTyl, PPrzodTyl, LSrodek, PSrodek, LKatPrzod, PKatPrzod, LKatTyl, PKatTyl, DirectionPin)
 
 while True:
 # Obsługa aparatury sterującej
