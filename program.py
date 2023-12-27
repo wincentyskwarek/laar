@@ -1,5 +1,6 @@
 import time
 from ibus import IBus
+import rover
 import gps
 import RPi.GPIO as GPIO
 
@@ -18,12 +19,22 @@ session = gps.gps(mode=gps.WATCH_ENABLE)
 #IBus.normalize(res[5], type="dial"),
 #IBus.normalize(res[6], type="dial")),
 #definicja pinu GPIO
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.OUT)
-#GPIO.output(4, GPIO.HIGH)
+#Definicja pinów łazika
+LPrzodTyl = 4       # Silnik koła lewego przód i tył
+PPrzodTyl = 17      # Silnik koła lewego przód i tył
+LSrodek = 27        # Silnik koła lewego środek
+PSrodek = 22        # Silnik koła prawego środek
+LKatPrzod = 10   # Servo koła lewego przód i tył
+PKatPrzod = 9    # Servo koła prawego przód i tył
+LKatTyl = 10   # Servo koła lewego przód i tył
+PKatTyl = 9    # Servo koła prawego przód i tył
+DirectionPin = 11   # Pin kierunku ruchu silników
+OdbiornikPinRX = 15 # Pin odbiornika aparatury sterującej
+GPSTXPin = 12       # Pin RXD od odbiornika GPS
+GPSRXPin = 13       # Pin TXD od odbiornika GPS
 
-pwm = GPIO.PWM(4,100 )
-pwm.start(100)
+#Definicja obiektu klasy lazik
+lazik = rover(LPrzodTyl, PPrzodTyl, LSrodek, PSrodek, LKatPrzod, PKatPrzod, LKatTyl, PKatTyl, DirectionPin)
 
 while True:
 # Obsługa aparatury sterującej
@@ -32,9 +43,9 @@ while True:
     if (res[0] == 1):
         kat=IBus.normalize(res[2])
         predkosc=IBus.normalize(res[3])
+        lazik.go(predkosc, kat)
         print(predkosc)
-        predkosc=max(-1*predkosc, predkosc)
-        pwm.ChangeDutyCycle(predkosc)
+        
     else:
         print ("Status offline {}".format(res[0]))
 
