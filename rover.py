@@ -39,7 +39,7 @@ class Rover():
     def go(self, angle, speed):
         if angle!=0:
             r=Rover.b/(2*math.sin(angle))
-            omega=self.speed/r
+            omega=speed/r
             #Wheel 1
             angle1=math.atan(Rover.b/(2*(r-Rover.a/2)))
             r1=Rover.b/(2*math.sin(angle1))
