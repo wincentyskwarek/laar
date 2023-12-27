@@ -26,10 +26,10 @@ LSrodek = 27        # Silnik koła lewego środek
 PSrodek = 22        # Silnik koła prawego środek
 LKatPrzod = 10   # Servo koła lewego przód i tył
 PKatPrzod = 9    # Servo koła prawego przód i tył
-LKatTyl = 10   # Servo koła lewego przód i tył
-PKatTyl = 9    # Servo koła prawego przód i tył
-DirectionPin = 11   # Pin kierunku ruchu silników
-OdbiornikPinRX = 15 # Pin odbiornika aparatury sterującej
+LKatTyl = 11   # Servo koła lewego przód i tył
+PKatTyl = 23    # Servo koła prawego przód i tył
+DirectionPin = 24   # Pin kierunku ruchu silników
+OdbiornikPinRX = 25 # Pin odbiornika aparatury sterującej
 GPSTXPin = 12       # Pin RXD od odbiornika GPS
 GPSRXPin = 13       # Pin TXD od odbiornika GPS
 
