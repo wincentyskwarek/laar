@@ -74,17 +74,17 @@ class Rover():
         else:
             GPIO.output(self.dirPin,GPIO.LOW)
         # Wheel 1 and wheel 5
-        self.w15.ChangeDutyCycle(abs((speed1*Rover.maxSpeed/100)//30))
+        self.wheel15.ChangeDutyCycle(abs((speed1*Rover.maxSpeed/100)//30))
         #angle1=int(angle1*Rover.servoAngle)//100
         #self.k15.ChangeDutyCycle(abs(angle1))
         # Wheel 2 and wheel 6
-        self.w26.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
+        self.wheel26.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
         #angle1=int(angle2*Rover.servoAngle)//100
         #self.k26.ChangeDutyCycle(abs(angle2))
         # Wheel 3
-        self.w3.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
+        self.wheel3.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
         # Wheel 4
-        self.w4.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
+        self.wheel4.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
     @staticmethod
     def normalize (value):
         return 0
