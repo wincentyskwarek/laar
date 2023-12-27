@@ -7,7 +7,7 @@ class Rover():
     servoAngle = 180    # Maksymalny kąt obrotu serwa
     MaxSpeed = 300      # Maksymalna prędkość z obliczeń 316
     def __init__(self, w15, w26, w3, w4, k1, k2, k5, k6, dirPin):
-        frequency = 100 #częstotliwość PWM
+        self.frequency = 100 #częstotliwość PWM
         self.dirPin=dirPin
         GPIO.setmode(GPIO.BCM) #Używane nazwy pinów można też dać GPIO.setmode(GPIO.BOARD)
         #Definicja pinów kół
@@ -23,14 +23,14 @@ class Rover():
         GPIO.setup(dirPin, GPIO.OUT)
         GPIO.output(dirPin, GPIO.LOW)
         # Inicjalizacja pinów
-        self.wheel15 = GPIO.PWM(w15,frequency)
-        self.wheel26 = GPIO.PWM(w26,frequency)
-        self.wheel3 = GPIO.PWM(w3,frequency)
-        self.wheel4 = GPIO.PWM(w4,frequency)
-        self.servo1 = GPIO.PWM(k1,frequency)
-        self.servo2 = GPIO.PWM(k2,frequency)
-        self.servo5 = GPIO.PWM(k5,frequency)
-        self.servo6 = GPIO.PWM(k6,frequency)
+        self.wheel15 = GPIO.PWM(w15,self.frequency)
+        self.wheel26 = GPIO.PWM(w26,self.frequency)
+        self.wheel3 = GPIO.PWM(w3,self.frequency)
+        self.wheel4 = GPIO.PWM(w4,self.frequency)
+        self.servo1 = GPIO.PWM(k1,self.frequency)
+        self.servo2 = GPIO.PWM(k2,self.frequency)
+        self.servo5 = GPIO.PWM(k5,self.frequency)
+        self.servo6 = GPIO.PWM(k6,self.frequency)
         self.wheel15.start(0)
         self.wheel26.start(0)
         self.wheel3.start(0)
