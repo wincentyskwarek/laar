@@ -30,7 +30,8 @@ while True:
     # Odczyt z odbiornika i zapis do listy kanałów
     res = ibus_in.read()
     if (res[0] == 1):
-        predkosc=IBus.normalize(res[2])
+        kat=IBus.normalize(res[2])
+        predkosc=IBus.normalize(res[3])
         print(predkosc)
         predkosc=max(-1*predkosc, predkosc)
         pwm.ChangeDutyCycle(predkosc)
