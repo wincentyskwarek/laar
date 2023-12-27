@@ -20,8 +20,10 @@ session = gps.gps(mode=gps.WATCH_ENABLE)
 #definicja pinu GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.OUT)
-pwm = GPIO.PWM(4,100 )
-pwm.start(100)
+GPIO.output(4, GPIO.HIGH)
+
+#pwm = GPIO.PWM(4,100 )
+#pwm.start(100)
 
 while True:
 # Obsługa aparatury sterującej
@@ -52,5 +54,5 @@ while True:
     except StopIteration:
         session = None
         print("GPSD has terminated")
-pwm.stop()
+#pwm.stop()
 GPIO.cleanup()
