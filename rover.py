@@ -25,8 +25,8 @@ class Rover():
         # Inicjalizacja pinów
         self.wheel15 = GPIO.PWM(w15,frequency)
         self.wheel26 = GPIO.PWM(w26,frequency)
-        self.wheel3 = GPIO.PWM(w26,frequency)
-        self.wheel4 = GPIO.PWM(w26,frequency)
+        self.wheel3 = GPIO.PWM(w3,frequency)
+        self.wheel4 = GPIO.PWM(w4,frequency)
         self.servo1 = GPIO.PWM(k1,frequency)
         self.servo2 = GPIO.PWM(k2,frequency)
         self.servo5 = GPIO.PWM(k5,frequency)
