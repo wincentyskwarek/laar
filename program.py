@@ -1,7 +1,7 @@
 import time
 from ibus import IBus
 import gps
-from RPIO import PWM
+import RPi.GIO as GPIO
 
 
 #Uruchomienie IBUS
@@ -17,14 +17,21 @@ session = gps.gps(mode=gps.WATCH_ENABLE)
 #IBus.normalize(res[4]),
 #IBus.normalize(res[5], type="dial"),
 #IBus.normalize(res[6], type="dial")),
+#definicja pinu GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(4, GPIO.OUT)
+pwm = GPIO.PWM(4,100 )
+pwm.start(0)
 
 while True:
 # Obsługa aparatury sterującej
     # Odczyt z odbiornika i zapis do listy kanałów
     res = ibus_in.read()
     if (res[0] == 1):
-        print (IBus.normalize(res[2]))
-        
+        predkosc=IBus.normalize(res[2])
+	print(predkosc))
+	predkosc=max(0, predkosc)
+	pwm.ChangeDutyCycle(predkosc)
     else:
         print ("Status offline {}".format(res[0]))
 
@@ -45,3 +52,5 @@ while True:
     except StopIteration:
         session = None
         print("GPSD has terminated")
+pwm.stop()
+GPIO.cleanup()
