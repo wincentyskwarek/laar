@@ -1,7 +1,7 @@
 import time
 from ibus import IBus
 import gps
-import RPi.GIO as GPIO
+import RPi.GPIO as GPIO
 
 
 #Uruchomienie IBUS
