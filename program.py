@@ -32,7 +32,7 @@ while True:
     if (res[0] == 1):
         predkosc=IBus.normalize(res[2])
         print(predkosc)
-        predkosc=max(0, predkosc)
+        predkosc=max(-1*predkosc, predkosc)
         pwm.ChangeDutyCycle(predkosc)
     else:
         print ("Status offline {}".format(res[0]))
