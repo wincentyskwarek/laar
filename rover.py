@@ -5,7 +5,7 @@ class Rover():
     a=0.5               # Rozstaw kół [m]
     b=1                 # Rozstaw osi [m]
     servoAngle = 180    # Maksymalny kąt obrotu serwa
-    maxSpeed = 300      # Maksymalna prędkość z obliczeń 316
+    maxSpeed = 600      # Maksymalna prędkość z obliczeń 316
     def __init__(self, w15p, w15t, w3p, w3t, w26p, w26t, w4p, w4t, k1, k5, k2, k6, ActivePin):
         self.frequency = 100 #częstotliwość PWM
         self.ActivePin=ActivePin
@@ -49,7 +49,7 @@ class Rover():
         self.wheel4t.start(0)
 
     def go(self, angle, speed):
-        self.wheel26p.ChangeDutyCycle(100)
+        #self.wheel26p.ChangeDutyCycle(100)
         if angle!=0:
             r=Rover.b/(2*math.sin(angle))
             omega=speed/r
@@ -86,7 +86,7 @@ class Rover():
             print("")
             #self.wheel15p.ChangeDutyCycle(abs((speed1*Rover.maxSpeed/100)//30))
             #self.wheel3p.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
-            #self.wheel26p.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
+            self.wheel26p.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
             #self.wheel4p.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
             #self.wheel15t.ChangeDutyCycle(0)
             #self.wheel3t.ChangeDutyCycle(0)
@@ -100,7 +100,7 @@ class Rover():
             #self.wheel4t.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
             #self.wheel15p.ChangeDutyCycle(0)
             #self.wheel3p.ChangeDutyCycle(0)
-            #self.wheel26p.ChangeDutyCycle(0)
+            self.wheel26p.ChangeDutyCycle(0)
             #self.wheel4p.ChangeDutyCycle(0)
         # Wheel 1 and wheel 5
         
