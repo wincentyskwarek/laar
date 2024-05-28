@@ -83,6 +83,7 @@ class Rover():
             speed3=speed
             speed4=speed
         if speed>0:
+            print("")
             #self.wheel15p.ChangeDutyCycle(abs((speed1*Rover.maxSpeed/100)//30))
             #self.wheel3p.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
             #self.wheel26p.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
@@ -92,6 +93,7 @@ class Rover():
             #self.wheel26t.ChangeDutyCycle(0)
             #self.wheel4t.ChangeDutyCycle(0)
         else:
+            print("")
             #self.wheel15t.ChangeDutyCycle(abs((speed1*Rover.maxSpeed/100)//30))
             #self.wheel3t.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
             #self.wheel26t.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
