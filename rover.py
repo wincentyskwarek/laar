@@ -49,6 +49,7 @@ class Rover():
         self.wheel4t.start(0)
 
     def go(self, angle, speed):
+        #100%mocy
         self.wheel15p.ChangeDutyCycle(100)
         if angle!=0:
             r=Rover.b/(2*math.sin(angle))
