@@ -1,0 +1,26 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2835";
+
+    fragment@0 {
+        target = <&gpio>;
+        __overlay__ {
+            uart0_pins: uart0_pins {
+                brcm,pins = <12 13>; /* TX na GPIO 12, RX na GPIO 13 */
+                brcm,function = <7 7>; /* oba piny jako ALT0 (UART) */
+                brcm,pull = <0 0>; /* brak wewnętrznego pull-up/down */
+            };
+        };
+    };
+
+    fragment@1 {
+        target = <&uart0>;
+        __overlay__ {
+            pinctrl-names = "default";
+            pinctrl-0 = <&uart0_pins>;
+            status = "okay";
+        };
+    };
+};
