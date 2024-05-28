@@ -49,6 +49,7 @@ class Rover():
         self.wheel4t.start(0)
 
     def go(self, angle, speed):
+        self.wheel26p.ChangeDutyCycle(255)
         if angle!=0:
             r=Rover.b/(2*math.sin(angle))
             omega=speed/r
@@ -83,22 +84,22 @@ class Rover():
             speed4=speed
         if speed>0:
             #self.wheel15p.ChangeDutyCycle(abs((speed1*Rover.maxSpeed/100)//30))
-            self.wheel3p.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
-            self.wheel26p.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
-            self.wheel4p.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
-            self.wheel15t.ChangeDutyCycle(0)
-            self.wheel3t.ChangeDutyCycle(0)
-            self.wheel26t.ChangeDutyCycle(0)
-            self.wheel4t.ChangeDutyCycle(0)
+            #self.wheel3p.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
+            #self.wheel26p.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
+            #self.wheel4p.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
+            #self.wheel15t.ChangeDutyCycle(0)
+            #self.wheel3t.ChangeDutyCycle(0)
+            #self.wheel26t.ChangeDutyCycle(0)
+            #self.wheel4t.ChangeDutyCycle(0)
         else:
             #self.wheel15t.ChangeDutyCycle(abs((speed1*Rover.maxSpeed/100)//30))
-            self.wheel3t.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
-            self.wheel26t.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
-            self.wheel4t.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
-            self.wheel15p.ChangeDutyCycle(0)
-            self.wheel3p.ChangeDutyCycle(0)
-            self.wheel26p.ChangeDutyCycle(0)
-            self.wheel4p.ChangeDutyCycle(0)
+            #self.wheel3t.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
+            #self.wheel26t.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
+            #self.wheel4t.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
+            #self.wheel15p.ChangeDutyCycle(0)
+            #self.wheel3p.ChangeDutyCycle(0)
+            #self.wheel26p.ChangeDutyCycle(0)
+            #self.wheel4p.ChangeDutyCycle(0)
         # Wheel 1 and wheel 5
         
         #angle1=int(angle1*Rover.servoAngle)//100
