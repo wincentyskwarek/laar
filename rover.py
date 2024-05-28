@@ -90,17 +90,17 @@ class Rover():
             #self.wheel4p.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
             #self.wheel15t.ChangeDutyCycle(0)
             #self.wheel3t.ChangeDutyCycle(0)
-            #self.wheel26t.ChangeDutyCycle(0)
+            self.wheel26t.ChangeDutyCycle(0)
             #self.wheel4t.ChangeDutyCycle(0)
         else:
             print("")
             #self.wheel15t.ChangeDutyCycle(abs((speed1*Rover.maxSpeed/100)//30))
             #self.wheel3t.ChangeDutyCycle(abs((speed3*Rover.maxSpeed/100)//30))
-            #self.wheel26t.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
+            self.wheel26t.ChangeDutyCycle(abs((speed2*Rover.maxSpeed/100)//30))
             #self.wheel4t.ChangeDutyCycle(abs((speed4*Rover.maxSpeed/100)//30))
             #self.wheel15p.ChangeDutyCycle(0)
             #self.wheel3p.ChangeDutyCycle(0)
-            #self.wheel26p.ChangeDutyCycle(0)
+            self.wheel26p.ChangeDutyCycle(0)
             #self.wheel4p.ChangeDutyCycle(0)
         # Wheel 1 and wheel 5
         
