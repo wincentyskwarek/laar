@@ -20,21 +20,28 @@ session = gps.gps(mode=gps.WATCH_ENABLE)
 #IBus.normalize(res[6], type="dial")),
 #definicja pinu GPIO
 #Definicja pinów łazika
-LPrzodTyl = 4       # Silnik koła lewego przód i tył
-PPrzodTyl = 17      # Silnik koła lewego przód i tył
-LSrodek = 27        # Silnik koła lewego środek
-PSrodek = 22        # Silnik koła prawego środek
-LKatPrzod = 10   # Servo koła lewego przód i tył
-PKatPrzod = 9    # Servo koła prawego przód i tył
-LKatTyl = 11   # Servo koła lewego przód i tył
-PKatTyl = 23    # Servo koła prawego przód i tył
-DirectionPin = 24   # Pin kierunku ruchu silników
+#Silniki DC
+LPrzod = 5          # Silnik koła lewego przód i tył obroty przód
+LTyl = 17           # Silnik koła lewego przód i tył obroty tył
+LSrodekPrzod = 26   # Silnik koła lewego środek obroty przód
+LSrodekTyl = 6      # Silnik koła lewego środek obroty tył
+PPrzod = 24         # Silnik koła prawego przód i tył obroty przód
+PTyl = 23           # Silnik koła prawego przód i tył obroty tył
+
+PSrodekPrzod = 25   # Silnik koła prawego środek przód
+PSrodekTyl = 16      # Silnik koła prawego środek tył
+#SERWA
+LKatPrzod = 27   # Servo koła lewego przód i tył
+LKatTyl = 18   # Servo koła lewego przód i tył
+PKatPrzod = 4    # Servo koła prawego przód i tył
+PKatTyl = 22    # Servo koła prawego przód i tył
+ActivatePin =     # Pin aktywacji silnikóa
 OdbiornikPinRX = 25 # Pin odbiornika aparatury sterującej
 GPSTXPin = 12       # Pin RXD od odbiornika GPS
 GPSRXPin = 13       # Pin TXD od odbiornika GPS
 
 #Definicja obiektu klasy lazik
-lazik = Rover(LPrzodTyl, PPrzodTyl, LSrodek, PSrodek, LKatPrzod, PKatPrzod, LKatTyl, PKatTyl, DirectionPin)
+lazik = Rover(LPrzod, LTyl, LSrodekPrzod, LSrodekTyl, PPrzod, PTyl, PSrodekPrzod, PSrodekTyl, LKatPrzod, LKatTyl, PKatPrzod, PKatTyl, ActivatePin)
 
 while True:
 # Obsługa aparatury sterującej
