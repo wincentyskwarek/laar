@@ -9,6 +9,7 @@ class Rover():
     maxSpeed = 1      # Maksymalna prędkość z obliczeń 316
     def __init__(self, w15p, w15t, w3p, w3t, w26p, w26t, w4p, w4t, k1, k5, k2, k6, ActivePin):
         self.frequency = 100 #częstotliwość PWM
+        self.servoFrequency = 50 #częstotliwość PWM
         self.ActivePin=ActivePin
         GPIO.setmode(GPIO.BCM) #Używane nazwy pinów można też dać GPIO.setmode(GPIO.BOARD)
         #Definicja pinów kół
@@ -27,6 +28,10 @@ class Rover():
         # Definicja pinów kierunku
         GPIO.setup(ActivePin, GPIO.OUT)
         GPIO.output(ActivePin, GPIO.HIGH)
+        GPIO.output(k1, True)
+        GPIO.output(k2, True)
+        GPIO.output(k5, True)
+        GPIO.output(k6, True)
         # Inicjalizacja pinów
         self.wheel15p = GPIO.PWM(w15p,self.frequency)
         self.wheel15t = GPIO.PWM(w15t,self.frequency)
@@ -36,10 +41,11 @@ class Rover():
         self.wheel26t = GPIO.PWM(w26t,self.frequency)
         self.wheel4p = GPIO.PWM(w4p,self.frequency)
         self.wheel4t = GPIO.PWM(w4t,self.frequency)
-        self.servo1 = GPIO.PWM(k1,self.frequency)
-        self.servo2 = GPIO.PWM(k2,self.frequency)
-        self.servo5 = GPIO.PWM(k5,self.frequency)
-        self.servo6 = GPIO.PWM(k6,self.frequency)
+        self.servo1 = GPIO.PWM(k1,self.servoFrequency)
+        self.servo2 = GPIO.PWM(k2,self.servoFrequency)
+        self.servo5 = GPIO.PWM(k5,self.servoFrequency)
+        self.servo6 = GPIO.PWM(k6,self.servoFrequency)
+        
         self.wheel15p.start(0)
         self.wheel15t.start(0)
         self.wheel3p.start(0)
@@ -108,10 +114,10 @@ class Rover():
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
         
-        self.servo1.ChangeDutyCycle(100)
-        self.servo2.ChangeDutyCycle(100)
-        self.servo5.ChangeDutyCycle(100)
-        self.servo6.ChangeDutyCycle(100)
+        self.servo1.ChangeDutyCycle(2 + (angle1/ 18))
+        self.servo2.ChangeDutyCycle(2 + (angle2/ 18))
+        self.servo5.ChangeDutyCycle(2 + (angle3/ 18))
+        self.servo6.ChangeDutyCycle(2 + (angle4/ 18))
         # Wheel 1 and wheel 5
         
         #angle1=int(angle1*Rover.servoAngle)//100
