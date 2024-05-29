@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.OUT)  # GPIO17 jako wyjście
 
 # Ustawienie PWM na pinie GPIO17
-pwm = GPIO.PWM(17, 50)  # 50Hz częstotliwość
+pwm = GPIO.PWM(4, 50)  # 50Hz częstotliwość
 pwm.start(0)  # Rozpocznij PWM z wypełnieniem 0
 
 # Funkcja do ustawiania kąta serwa
