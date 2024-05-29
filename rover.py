@@ -114,10 +114,10 @@ class Rover():
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
         
-        self.servo1.ChangeDutyCycle(2 + (angle1/ 18))
-        self.servo2.ChangeDutyCycle(2 + (angle2/ 18))
-        self.servo5.ChangeDutyCycle(2 + (angle3/ 18))
-        self.servo6.ChangeDutyCycle(2 + (angle4/ 18))
+        self.servo1.ChangeDutyCycle(2 + (angle/ 18))
+        self.servo2.ChangeDutyCycle(2 + (angle/ 18))
+        self.servo5.ChangeDutyCycle(2 + (angle/ 18))
+        self.servo6.ChangeDutyCycle(2 + (angle/ 18))
         # Wheel 1 and wheel 5
         
         #angle1=int(angle1*Rover.servoAngle)//100
