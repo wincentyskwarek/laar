@@ -1,21 +1,21 @@
 import RPi.GPIO as GPIO
 import time
-
+pin=27
 # Ustawienia GPIO
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.OUT)  # GPIO17 jako wyjście
+GPIO.setup(pin, GPIO.OUT)  # GPIO17 jako wyjście
 
 # Ustawienie PWM na pinie GPIO17
-pwm = GPIO.PWM(4, 50)  # 50Hz częstotliwość
+pwm = GPIO.PWM(pin, 50)  # 50Hz częstotliwość
 pwm.start(0)  # Rozpocznij PWM z wypełnieniem 0
 
 # Funkcja do ustawiania kąta serwa
 def set_angle(angle):
     duty = 2 + (angle / 18)  # Przekształcenie kąta na cykl pracy PWM
-    GPIO.output(4, True)
+    GPIO.output(pin, True)
     pwm.ChangeDutyCycle(duty)
     time.sleep(1)
-    GPIO.output(4, False)
+    GPIO.output(pin, False)
     pwm.ChangeDutyCycle(0)
 
 try:
