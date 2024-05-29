@@ -65,19 +65,19 @@ class Rover():
             r=Rover.b/(2*math.sin(angle))
             omega=speed/r
             #Wheel 1
-            angle1=math.degrees(math.atan(Rover.b/(2*(r-Rover.a/2))))
+            angle1=math.atan(Rover.b/(2*(r-Rover.a/2)))
             r1=Rover.b/(2*math.sin(angle1))
             speed1=omega*r1
             #Wheel 2
-            angle2=math.degrees(math.atan(Rover.b/(2*(r+Rover.a/2))))
+            angle2=math.atan(Rover.b/(2*(r+Rover.a/2)))
             r2=Rover.b/(2*math.sin(angle2))
             speed2=omega*r2
             #Wheel 3
-            angle3=math.degrees(math.atan(0/(2*(r-Rover.a/2))))
+            angle3=math.atan(0/(2*(r-Rover.a/2)))
             r3=r-Rover.a/2
             speed3=omega*r3
             #Wheel 4
-            angle4=math.degrees(math.atan(0/(2*(r+Rover.a/2))))
+            angle4=math.atan(0/(2*(r+Rover.a/2)))
             r4=r+Rover.a/2
             speed4=omega*r4
             #Wheel 5
