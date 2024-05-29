@@ -28,8 +28,8 @@ LSrodekTyl = 6      # Silnik koła lewego środek obroty tył
 PPrzod = 24         # Silnik koła prawego przód i tył obroty przód
 PTyl = 23           # Silnik koła prawego przód i tył obroty tył
 
-PSrodekPrzod = 25   # Silnik koła prawego środek przód
-PSrodekTyl = 16      # Silnik koła prawego środek tył
+PSrodekPrzod = 16   # Silnik koła prawego środek przód
+PSrodekTyl = 25      # Silnik koła prawego środek tył
 #SERWA
 LKatPrzod = 27   # Servo koła lewego przód i tył
 LKatTyl = 18   # Servo koła lewego przód i tył
