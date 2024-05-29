@@ -65,19 +65,19 @@ class Rover():
             r=Rover.b/(2*math.sin(angle))
             omega=speed/r
             #Wheel 1
-            angle1=math.atan(Rover.b/(2*(r-Rover.a/2)))
+            angle1=math.degrees(math.atan(Rover.b/(2*(r-Rover.a/2))))
             r1=Rover.b/(2*math.sin(angle1))
             speed1=omega*r1
             #Wheel 2
-            angle2=math.atan(Rover.b/(2*(r+Rover.a/2)))
+            angle2=math.degrees(math.atan(Rover.b/(2*(r+Rover.a/2))))
             r2=Rover.b/(2*math.sin(angle2))
             speed2=omega*r2
             #Wheel 3
-            angle3=math.atan(0/(2*(r-Rover.a/2)))
+            angle3=math.degrees(math.atan(0/(2*(r-Rover.a/2))))
             r3=r-Rover.a/2
             speed3=omega*r3
             #Wheel 4
-            angle4=math.atan(0/(2*(r+Rover.a/2)))
+            angle4=math.degrees(math.atan(0/(2*(r+Rover.a/2))))
             r4=r+Rover.a/2
             speed4=omega*r4
             #Wheel 5
@@ -114,10 +114,10 @@ class Rover():
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
         
-        self.servo1.ChangeDutyCycle(2 + (angle/ 18))
-        self.servo2.ChangeDutyCycle(2 + (angle/ 18))
-        self.servo5.ChangeDutyCycle(2 + (angle/ 18))
-        self.servo6.ChangeDutyCycle(2 + (angle/ 18))
+        self.servo1.ChangeDutyCycle(2 + (angle1/ 18))
+        self.servo2.ChangeDutyCycle(2 + (angle2/ 18))
+        self.servo5.ChangeDutyCycle(2 + (angle3/ 18))
+        self.servo6.ChangeDutyCycle(2 + (angle4/ 18))
         # Wheel 1 and wheel 5
         
         #angle1=int(angle1*Rover.servoAngle)//100
@@ -130,7 +130,7 @@ class Rover():
         
         # Wheel 4
         
-        print(abs((speed1*Rover.maxSpeed/100)//30), abs((speed2*Rover.maxSpeed/100)//30), abs((speed3*Rover.maxSpeed/100)//30), abs((speed4*Rover.maxSpeed/100)//30) )
+        print(2 + (angle/ 18) )
     @staticmethod
     def normalize (value):
         return 0
