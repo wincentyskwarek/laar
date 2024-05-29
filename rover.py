@@ -1,6 +1,7 @@
 import math
 import RPi.GPIO as GPIO
 
+
 class Rover():
     a=0.5               # Rozstaw kół [m]
     b=1                 # Rozstaw osi [m]
