@@ -50,8 +50,8 @@ class Rover():
         self.wheel4t.start(0)
         self.servo1.start(0)
         self.servo2.start(0)
-        self.servo3.start(0)
-        self.servo4.start(0)
+        self.servo5.start(0)
+        self.servo6.start(0)
 
     def go(self, angle, speed):
         #self.wheel26p.ChangeDutyCycle(100)
