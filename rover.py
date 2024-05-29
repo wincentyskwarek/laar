@@ -93,6 +93,13 @@ class Rover():
             speed2=speed
             speed3=speed
             speed4=speed
+            angle1=0
+            angle2=0
+            angle3=0
+            angle4=0
+            angle5=0
+            angle6=0
+
         if speed>0:
             print("")
             self.wheel15p.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
@@ -114,10 +121,10 @@ class Rover():
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
         
-        self.servo1.ChangeDutyCycle(2 + (angle1/ 18))
-        self.servo2.ChangeDutyCycle(2 + (angle2/ 18))
-        self.servo5.ChangeDutyCycle(2 + (angle3/ 18))
-        self.servo6.ChangeDutyCycle(2 + (angle4/ 18))
+        self.servo1.ChangeDutyCycle(2 + (angle/ 18))
+        self.servo2.ChangeDutyCycle(2 + (angle/ 18))
+        self.servo5.ChangeDutyCycle(2 + (angle/ 18))
+        self.servo6.ChangeDutyCycle(2 + (angle/ 18))
         # Wheel 1 and wheel 5
         
         #angle1=int(angle1*Rover.servoAngle)//100
