@@ -48,6 +48,10 @@ class Rover():
         self.wheel26t.start(0)
         self.wheel4p.start(0)
         self.wheel4t.start(0)
+        self.servo1.start(0)
+        self.servo2.start(0)
+        self.servo3.start(0)
+        self.servo4.start(0)
 
     def go(self, angle, speed):
         #self.wheel26p.ChangeDutyCycle(100)
@@ -103,6 +107,8 @@ class Rover():
             self.wheel3p.ChangeDutyCycle(0)
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
+        
+        self.servo2.ChangeDutyCycle(2+angle2/18)
         # Wheel 1 and wheel 5
         
         #angle1=int(angle1*Rover.servoAngle)//100
