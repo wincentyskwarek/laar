@@ -143,7 +143,7 @@ class Rover():
         
         # Wheel 4
         
-        print((angle, angle2, angle3, angle4, angle5, angle6) )
+#    print((angle, angle2, angle3, angle4, angle5, angle6) )
     @staticmethod
     def normalize (value):
         return 0
