@@ -61,7 +61,7 @@ class Rover():
 
     def go(self, angle, speed):
         #self.wheel26p.ChangeDutyCycle(100)
-    '''
+'''
         if angle!=0:
             r=Rover.b/(2*math.sin(angle))
             omega=speed/r
@@ -125,7 +125,8 @@ class Rover():
             self.servo1.ChangeDutyCycle(angle)
             self.servo2.ChangeDutyCycle(angle)
             self.servo5.ChangeDutyCycle(angle)
-            self.servo6.ChangeDutyCycle(angle)''' 
+            self.servo6.ChangeDutyCycle(angle)
+''' 
         angle=(angle+100)//2
         speed=(speed+100)//2
         self.wheel15t.ChangeDutyCycle(speed)
