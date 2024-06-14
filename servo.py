@@ -12,7 +12,7 @@ try:
     dane = -1
 
     while (dane != "0"):			
-        dane = raw_input("Wprowadz cyfre:");		
+        dane = int(input("Wprowadz cyfre:"))		
         pwm.ChangeDutyCycle(float(dane))	
         time.sleep(.03)
 
