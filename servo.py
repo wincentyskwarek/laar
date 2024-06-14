@@ -23,4 +23,4 @@ except KeyboardInterrupt:
 
 pwm.stop()
 GPIO.cleanup()
-print "Konic"
+print ("Konic")
