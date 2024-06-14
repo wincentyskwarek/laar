@@ -85,7 +85,7 @@ class Rover():
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
 
-        angle=(angle+100)//2
+        angle=6+(angle)/(16.67)
 
         self.servo1.ChangeDutyCycle(angle)
         self.servo2.ChangeDutyCycle(angle)
