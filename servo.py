@@ -9,17 +9,17 @@ pwm.start(2)
 time.sleep(1)
 
 try:
-dane = -1
+    dane = -1
 
-while (dane != "0"):			
-	dane = raw_input("Wprowadz cyfre:");		
-	pwm.ChangeDutyCycle(float(dane))	
-	time.sleep(.03)
+    while (dane != "0"):			
+        dane = raw_input("Wprowadz cyfre:");		
+        pwm.ChangeDutyCycle(float(dane))	
+        time.sleep(.03)
 
 
 except KeyboardInterrupt:
-pwm.stop()
-GPIO.cleanup()
+    pwm.stop()
+    GPIO.cleanup()
 
 pwm.stop()
 GPIO.cleanup()
