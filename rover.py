@@ -61,6 +61,8 @@ class Rover():
 
     def go(self, angle, speed):
         #self.wheel26p.ChangeDutyCycle(100)
+        if speed<1 and speed>-1:
+            speed=0
         if speed>0:
             print("")
             self.wheel15p.ChangeDutyCycle(speed)
