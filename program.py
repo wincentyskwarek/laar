@@ -33,7 +33,7 @@ PSrodekTyl = 25      # Silnik koła prawego środek tył
 #SERWA
 LKatPrzod = 27   # Servo koła lewego przód i tył
 LKatTyl = 18   # Servo koła lewego przód i tył
-PKatPrzod = 7 #4    # Servo koła prawego przód i tył
+PKatPrzod = 4     # Servo koła prawego przód i tył
 PKatTyl = 22    # Servo koła prawego przód i tył
 ActivatePin = 20    # Pin aktywacji silnikóa
 OdbiornikPinRX = 25 # Pin odbiornika aparatury sterującej
