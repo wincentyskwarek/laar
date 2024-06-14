@@ -48,8 +48,8 @@ while True:
     # Odczyt z odbiornika i zapis do listy kanałów
     res = ibus_in.read()
     if (res[0] == 1):
-        kat=IBus.normalize(res[1])
-        predkosc=IBus.normalize(res[3])
+        kat=IBus.normalize(res[3])
+        predkosc=IBus.normalize(res[1])
         lazik.go(kat,predkosc)
         print(kat)
         
