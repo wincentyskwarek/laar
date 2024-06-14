@@ -60,12 +60,30 @@ class Rover():
         self.servo6.start(0)
 
     def go(self, angle, speed):
+        #self.wheel26p.ChangeDutyCycle(100)
+        if speed>0:
+            print("")
+            self.wheel15p.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
+            self.wheel3p.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
+            self.wheel26p.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
+            self.wheel4p.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
+            self.wheel15t.ChangeDutyCycle(0)
+            self.wheel3t.ChangeDutyCycle(0)
+            self.wheel26t.ChangeDutyCycle(0)
+            self.wheel4t.ChangeDutyCycle(0)
+        else:
+            print("")
+            self.wheel15t.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
+            self.wheel3t.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
+            self.wheel26t.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
+            self.wheel4t.ChangeDutyCycle(abs(speed2*Rover.maxSpeed))
+            self.wheel15p.ChangeDutyCycle(0)
+            self.wheel3p.ChangeDutyCycle(0)
+            self.wheel26p.ChangeDutyCycle(0)
+            self.wheel4p.ChangeDutyCycle(0)
+
         angle=(angle+100)//2
-        speed=(speed+100)//2
-        self.wheel15t.ChangeDutyCycle(speed)
-        self.wheel3t.ChangeDutyCycle(speed)
-        self.wheel26t.ChangeDutyCycle(speed)
-        self.wheel4t.ChangeDutyCycle(speed)
+
         self.servo1.ChangeDutyCycle(angle)
         self.servo2.ChangeDutyCycle(angle)
         self.servo5.ChangeDutyCycle(angle)
