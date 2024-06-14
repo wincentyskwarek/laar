@@ -12,7 +12,7 @@ while True:
     i=0
     while i<100:
         pwm.ChangeDutyCycle(float(i))	
-        time.sleep(1)
+        time.sleep(0.1)
         print(i)
         i+=0.01
      
