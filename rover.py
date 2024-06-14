@@ -73,6 +73,7 @@ class Rover():
             self.wheel4t.ChangeDutyCycle(0)
         else:
             print("")
+            speed=-speed
             self.wheel15t.ChangeDutyCycle(speed)
             self.wheel3t.ChangeDutyCycle(speed)
             self.wheel26t.ChangeDutyCycle(speed)
