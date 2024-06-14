@@ -10,11 +10,9 @@ pwm.start(2)
 time.sleep(1)
 while True:
     for i in range(101):
-        pwm.ChangeDutyCycle(float(1))	
+        pwm.ChangeDutyCycle(float(i))	
         time.sleep(1)
-     for i in range(100,0,-1):
-        pwm.ChangeDutyCycle(float(1))	
-        time.sleep(1)   
+     
 
 pwm.stop()
 GPIO.cleanup()
