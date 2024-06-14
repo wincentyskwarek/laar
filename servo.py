@@ -9,9 +9,12 @@ pwm = GPIO.PWM(22,50)
 pwm.start(2)
 time.sleep(1)
 while True:
-    for i in range(101):
+    i=0
+    while i<100:
         pwm.ChangeDutyCycle(float(i))	
         time.sleep(1)
+        print(i)
+        i+=1
      
 
 pwm.stop()
