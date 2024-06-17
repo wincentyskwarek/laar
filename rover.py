@@ -73,10 +73,10 @@ class Rover():
             self.wheel3t.ChangeDutyCycle(0)
             self.wheel26t.ChangeDutyCycle(0)
             self.wheel4t.ChangeDutyCycle(0)
-            if kat == -100:
+            if angle == -100:
                 self.wheel3p(speed)
                 self.wheel3t(0)
-            elif kat == 100 :
+            elif angle == 100 :
                 self.wheel3t(speed)
                 self.wheel3p(0)
                 
@@ -92,10 +92,10 @@ class Rover():
             self.wheel3p.ChangeDutyCycle(0)
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
-            if kat == 100:
+            if angle == 100:
                 self.wheel3p(speed)
                 self.wheel3t(0)
-            elif kat == -100: 
+            elif angle == -100: 
                 self.wheel3t(speed)
                 self.wheel3p(0)
 
