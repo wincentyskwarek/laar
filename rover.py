@@ -76,7 +76,7 @@ class Rover():
             if kat == -100:
                 self.wheel3p(speed)
                 self.wheel3t(0)
-            elif kat == 100 
+            elif kat == 100 :
                 self.wheel3t(speed)
                 self.wheel3p(0)
                 
@@ -95,7 +95,7 @@ class Rover():
             if kat == 100:
                 self.wheel3p(speed)
                 self.wheel3t(0)
-            elif kat == -100 
+            elif kat == -100: 
                 self.wheel3t(speed)
                 self.wheel3p(0)
 
