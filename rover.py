@@ -74,11 +74,11 @@ class Rover():
             self.wheel26t.ChangeDutyCycle(0)
             self.wheel4t.ChangeDutyCycle(0)
             if angle == -100:
-                self.wheel3p(speed)
-                self.wheel3t(0)
+                self.wheel3p.ChangeDutyCycle(speed)
+                self.wheel3t.ChangeDutyCycle(0)
             elif angle == 100 :
-                self.wheel3p(0)
-                self.wheel3t(speed)
+                self.wheel3p.ChangeDutyCycle(0)
+                self.wheel3t.ChangeDutyCycle(speed)
                 
                 
                 
@@ -94,11 +94,11 @@ class Rover():
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
             if angle == 100:
-                self.wheel3t(0)
-                self.wheel3p(speed)
+                self.wheel3t.ChangeDutyCycle(0)
+                self.wheel3p.ChangeDutyCycle(speed)
             elif angle == -100: 
-                self.wheel3p(0)
-                self.wheel3t(speed)
+                self.wheel3p.ChangeDutyCycle(0)
+                self.wheel3t.ChangeDutyCycle(speed)
                 
 
         angle=(angle)/(14.29)
