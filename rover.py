@@ -132,7 +132,7 @@ class Rover():
             self.servo5.ChangeDutyCycle(current_angle)
             self.servo6.ChangeDutyCycle(current_angle)
             
-            time.sleep(delay)
+            
         
         self.servo1.ChangeDutyCycle(target_angle)
         self.servo2.ChangeDutyCycle(target_angle)
