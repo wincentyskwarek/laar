@@ -55,14 +55,14 @@ while True:
         
         # zmiana kierunku srodkowego kola wzgledem katu obrotu:
 
-        if (kat == -90 and predkosc > 0) or (kat == 90 and predkosc < 0):
+        if (kat == -100 and predkosc > 0) or (kat == 100 and predkosc < 0):
             # wylacz LSrodekPrzod i PSrodekTyl
             GPIO.output(LSrodekPrzod, GPIO.LOW)
             GPIO.output(PSrodekTyl, GPIO.LOW)
             # wlacz PSrodekPrzod i LSrodekTyl
             GPIO.output(PSrodekPrzod, GPIO.HIGH)
             GPIO.output(LSrodekTyl, GPIO.HIGH)
-        elif (kat == 90 and predkosc < 0) or (kat == -90 and predkosc > 0):
+        elif (kat == 100 and predkosc < 0) or (kat == -100 and predkosc > 0):
             # wylacz PSrodekPrzod i LSrodekTyl
             GPIO.output(PSrodekPrzod, GPIO.LOW)
             GPIO.output(LSrodekTyl, GPIO.LOW)
