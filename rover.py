@@ -118,14 +118,13 @@ class Rover():
 
         cangle=angle
         
-        if (angle>0 and cangle<angle):
-            self.servo1.ChangeDutyCycle(7+cangle)
-            self.servo2.ChangeDutyCycle(7+cangle)
-        elif (angle<0 and cangle>angle):
-            self.servo5.ChangeDutyCycle(7-cangle)
-            self.servo6.ChangeDutyCycle(7-cangle)
-        else: # angle=0
-            pass
+
+        self.servo1.ChangeDutyCycle(7+cangle)
+        self.servo2.ChangeDutyCycle(7+cangle)
+        
+        self.servo5.ChangeDutyCycle(7-cangle)
+        self.servo6.ChangeDutyCycle(7-cangle)
+        
 
         # Wheel 1 and wheel 5
         
