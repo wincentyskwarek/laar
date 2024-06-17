@@ -42,7 +42,7 @@ GPSRXPin = 13       # Pin TXD od odbiornika GPS
 
 #Definicja obiektu klasy lazik
 lazik = Rover(LPrzod, LTyl, LSrodekPrzod, LSrodekTyl, PPrzod, PTyl, PSrodekPrzod, PSrodekTyl, LKatPrzod, LKatTyl, PKatPrzod, PKatTyl, ActivatePin)
-
+kkat=0
 while True:
 # Obsługa aparatury sterującej
     # Odczyt z odbiornika i zapis do listy kanałów
@@ -50,7 +50,7 @@ while True:
     if (res[0] == 1):
         kat=IBus.normalize(res[4])
         predkosc=IBus.normalize(res[2])
-        lazik.go(kat,predkosc)
+        kkat=lazik.go(kat,kkat, predkosc)
         print(f"kat: {kat}, predkosc: {predkosc}")
         
         # zmiana kierunku srodkowego kola wzgledem katu obrotu:
