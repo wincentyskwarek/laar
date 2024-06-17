@@ -116,14 +116,32 @@ class Rover():
 
         angle=(angle)/(14.29)
 
-        cangle=angle
+        target_angle = 7 + angle  # target servo position
+        current_angle = 7  # assuming servos start at neutral position (7)
+        step = 0.1  # step size for gradual increase
+        delay = 0.05  # delay between each step
         
+        while abs(current_angle - target_angle) > step:
+            if current_angle < target_angle:
+                current_angle += step
+            else:
+                current_angle -= step
+            
+            self.servo1.ChangeDutyCycle(current_angle)
+            self.servo2.ChangeDutyCycle(current_angle)
+            self.servo5.ChangeDutyCycle(current_angle)
+            self.servo6.ChangeDutyCycle(current_angle)
+            
+            time.sleep(delay)
+        
+        self.servo1.ChangeDutyCycle(target_angle)
+        self.servo2.ChangeDutyCycle(target_angle)
+        self.servo5.ChangeDutyCycle(target_angle)
+        self.servo6.ChangeDutyCycle(target_angle)
 
-        self.servo1.ChangeDutyCycle(7.5+cangle)
-        self.servo2.ChangeDutyCycle(7.2+cangle)
-        
-        self.servo5.ChangeDutyCycle(7.2-cangle)
-        self.servo6.ChangeDutyCycle(7-cangle)
+        @staticmethod
+        def normalize(value):
+            return 0
         
 
         # Wheel 1 and wheel 5
