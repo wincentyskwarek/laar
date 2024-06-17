@@ -50,7 +50,7 @@ while True:
     if (res[0] == 1):
         kat=IBus.normalize(res[4])
         predkosc=IBus.normalize(res[2])
-        kkat=lazik.go(kat,kkat, predkosc)
+        lazik.go(kat, predkosc)
         print(f"kat: {kat}, predkosc: {predkosc}")
         
         # zmiana kierunku srodkowego kola wzgledem katu obrotu:

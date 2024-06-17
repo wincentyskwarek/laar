@@ -59,13 +59,9 @@ class Rover():
         self.servo5.start(0)
         self.servo6.start(0)
 
-    def go(self, angle, cangle, speed):
+    def go(self, angle, speed):
         #self.wheel26p.ChangeDutyCycle(100)
-        if (angle<cangle):
-            cangle+=0.1
-        if (angle>cangle):
-            cangle-=0.1
-        
+      
         if speed<5 and speed>-5:
             speed=0
         if speed>0:
@@ -118,7 +114,7 @@ class Rover():
 
                 
 
-        cangle=(cangle)/(14.29)
+        angle=(angle)/(14.29)
 
         
         
@@ -139,7 +135,7 @@ class Rover():
         # Wheel 3
         
         # Wheel 4
-        return cangle
+
         
 #    print((angle, angle2, angle3, angle4, angle5, angle6) )
 @staticmethod
