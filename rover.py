@@ -118,7 +118,7 @@ class Rover():
         for i in range(7+angle):
             self.servo1.ChangeDutyCycle(7+angle)
             self.servo2.ChangeDutyCycle(7+angle)
-        for i in range (7-angle):
+        for i in range(7-angle):
             self.servo5.ChangeDutyCycle(7-angle)
             self.servo6.ChangeDutyCycle(7-angle)
 
