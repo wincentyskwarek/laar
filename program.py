@@ -51,8 +51,28 @@ while True:
         kat=IBus.normalize(res[4])
         predkosc=IBus.normalize(res[2])
         lazik.go(kat,predkosc)
-        print(kat)
+        print(f"kat: {kat}, predkosc: {predkosc}")
         
+        # zmiana kierunku srodkowego kola wzgledem katu obrotu:
+
+        if (kat == -90 and predkosc != 0):
+            # wylacz LSrodekPrzod i PSrodekTyl
+            GPIO.output(LSrodekPrzod, GPIO.LOW)
+            GPIO.output(PSrodekTyl, GPIO.LOW)
+            # wlacz PSrodekPrzod i LSrodekTyl
+            GPIO.output(PSrodekPrzod, GPIO.HIGH)
+            GPIO.output(LSrodekTyl, GPIO.HIGH)
+        elif (kat == 90 and predkosc != 0):
+            # wylacz PSrodekPrzod i LSrodekTyl
+            GPIO.output(PSrodekPrzod, GPIO.LOW)
+            GPIO.output(LSrodekTyl, GPIO.LOW)
+            # wlacz LSrodekPrzod i PSrodekTyl
+            GPIO.output(LSrodekPrzod, GPIO.HIGH)
+            GPIO.output(PSrodekTyl, GPIO.HIGH)
+        else: # -90 < kat < 90
+            pass
+
+
     else:
         print ("Status offline {}".format(res[0]))
 

@@ -19,7 +19,7 @@ class Rover():
         GPIO.setup(w3t, GPIO.OUT)
         GPIO.setup(w26p, GPIO.OUT)
         GPIO.setup(w26t, GPIO.OUT)
-        GPIO.setup(w4p, GPIO.OUT)
+        GPIO.setup(w4p, GPIO.OUT) 
         GPIO.setup(w4t, GPIO.OUT)
         GPIO.setup(k1, GPIO.OUT)
         GPIO.setup(k2, GPIO.OUT)
