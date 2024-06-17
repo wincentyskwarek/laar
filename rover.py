@@ -76,8 +76,8 @@ class Rover():
             if angle == -100:
                 self.wheel3p.ChangeDutyCycle(0) # LSrodekP wylacz
                 self.wheel3t.ChangeDutyCycle(speed) # LSrodekT wlacz
-                self.wheel4t.ChangeDutyCycle(speed) # PSrodekT wlacz
-                self.wheel4p.ChangeDutyCycle(0) # PSrodekP wylacz
+                self.wheel4t.ChangeDutyCycle(0) # PSrodekT wlacz
+                self.wheel4p.ChangeDutyCycle(speed) # PSrodekP wylacz
             elif angle == 100 :
                 self.wheel3p.ChangeDutyCycle(speed) # LSrodekP wlacz
                 self.wheel3t.ChangeDutyCycle(0) # LSrodekT wylacz
