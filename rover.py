@@ -76,8 +76,8 @@ class Rover():
             if angle == -100:
                 self.wheel3p.ChangeDutyCycle(0) # LSrodekP wylacz
                 self.wheel3t.ChangeDutyCycle(speed) # LSrodekT wlacz
-                self.wheel4t.ChangeDutyCycle(0) # PSrodekT wlacz
-                self.wheel4p.ChangeDutyCycle(speed) # PSrodekP wylacz
+                self.wheel4t.ChangeDutyCycle(0) # PSrodekT wylacz
+                self.wheel4p.ChangeDutyCycle(speed) # PSrodekP wlacz
             elif angle == 100 :
                 self.wheel3p.ChangeDutyCycle(speed) # LSrodekP wlacz
                 self.wheel3t.ChangeDutyCycle(0) # LSrodekT wylacz
@@ -102,10 +102,10 @@ class Rover():
                 self.wheel3t.ChangeDutyCycle(0) # LSrodekT wylacz
                 self.wheel3p.ChangeDutyCycle(speed) # LSrodekP wlacz
                 self.wheel4p.ChangeDutyCycle(0) # PSrodekP wylacz
-                self.wheel4t.ChangeDutyCycle(speed) # PSrodekT wylacz
+                self.wheel4t.ChangeDutyCycle(speed) # PSrodekT wlacz
             elif angle == 100: 
-                self.wheel3p.ChangeDutyCycle(0) # LSrodekP wlacz
-                self.wheel3t.ChangeDutyCycle(speed) # LSrodekT wylacz
+                self.wheel3p.ChangeDutyCycle(0) # LSrodekP wylacz
+                self.wheel3t.ChangeDutyCycle(speed) # LSrodekT wlacz
                 self.wheel4t.ChangeDutyCycle(0) # PSrodekT wylacz
                 self.wheel4p.ChangeDutyCycle(speed) # PSrodekP wlacz
             else:
@@ -115,10 +115,12 @@ class Rover():
 
         angle=(angle)/(14.29)
 
-        self.servo1.ChangeDutyCycle(7+angle)
-        self.servo2.ChangeDutyCycle(7+angle)
-        self.servo5.ChangeDutyCycle(7-angle)
-        self.servo6.ChangeDutyCycle(7-angle)
+        for i in range(7+angle):
+            self.servo1.ChangeDutyCycle(7+angle)
+            self.servo2.ChangeDutyCycle(7+angle)
+        for i in range (7-angle):
+            self.servo5.ChangeDutyCycle(7-angle)
+            self.servo6.ChangeDutyCycle(7-angle)
 
         # Wheel 1 and wheel 5
         
