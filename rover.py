@@ -120,11 +120,11 @@ class Rover():
         
         
 
-        self.servo1.ChangeDutyCycle(7.5+angle)
-        self.servo2.ChangeDutyCycle(7.2+angle)
+        self.servo1.ChangeDutyCycle(7.5+angle/2)
+        self.servo2.ChangeDutyCycle(7.2+angle/2)
         
-        self.servo5.ChangeDutyCycle(7.2-angle)
-        self.servo6.ChangeDutyCycle(7-angle)
+        self.servo5.ChangeDutyCycle(7.2-angle/2)
+        self.servo6.ChangeDutyCycle(7-angle/2)
         
 
         # Wheel 1 and wheel 5
