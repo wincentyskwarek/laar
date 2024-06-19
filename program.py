@@ -20,7 +20,7 @@ session = gps.gps(mode=gps.WATCH_ENABLE)
 #IBus.normalize(res[6], type="dial")),
 #definicja pinu GPIO
 #Definicja pinów łazika
-#Silniki DC
+#Silniki DC 
 LPrzod = 5          # Silnik koła lewego przód i tył obroty przód
 LTyl = 17           # Silnik koła lewego przód i tył obroty tył
 LSrodekPrzod = 26   # Silnik koła lewego środek obroty przód
@@ -61,7 +61,7 @@ while True:
     else:
         print ("Status offline {}".format(res[0]))
 
-#Obsługa modułu GPS
+#Obsługa modułu  GPS
     try:
         if session.waiting():  # Sprawdza, czy są dostępne nowe dane
             report = session.next()

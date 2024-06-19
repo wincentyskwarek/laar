@@ -116,14 +116,14 @@ class Rover():
 
         angle=(angle)/(14.29)
 
-        cangle=angle
+        
         
 
-        self.servo1.ChangeDutyCycle(7.5+cangle)
-        self.servo2.ChangeDutyCycle(7.2+cangle)
+        self.servo1.ChangeDutyCycle(7.5+angle)
+        self.servo2.ChangeDutyCycle(7.2+angle)
         
-        self.servo5.ChangeDutyCycle(7.2-cangle)
-        self.servo6.ChangeDutyCycle(7-cangle)
+        self.servo5.ChangeDutyCycle(7.2-angle)
+        self.servo6.ChangeDutyCycle(7.2-angle)
         
 
         # Wheel 1 and wheel 5
