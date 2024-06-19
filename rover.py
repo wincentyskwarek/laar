@@ -12,7 +12,8 @@ class Rover():
         self.servoFrequency = 50 #częstotliwość PWM
         self.ActivePin=ActivePin
         GPIO.setmode(GPIO.BCM) #Używane nazwy pinów można też dać GPIO.setmode(GPIO.BOARD)
-        #Definicja pinów kół
+        
+        #Definicja kol
         GPIO.setup(w15p, GPIO.OUT)
         GPIO.setup(w15t, GPIO.OUT)
         GPIO.setup(w3p, GPIO.OUT)
@@ -33,6 +34,7 @@ class Rover():
         GPIO.output(k5, True)
         GPIO.output(k6, True)
         # Inicjalizacja pinów
+
         self.wheel15p = GPIO.PWM(w15p,self.frequency)
         self.wheel15t = GPIO.PWM(w15t,self.frequency)
         self.wheel3p = GPIO.PWM(w3p,self.frequency)
@@ -61,7 +63,6 @@ class Rover():
 
     def go(self, angle, speed):
         #self.wheel26p.ChangeDutyCycle(100)
-      
         if speed<5 and speed>-5:
             speed=0
         if speed>0:
