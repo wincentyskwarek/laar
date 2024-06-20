@@ -69,19 +69,20 @@ class Rover():
         x=41.25
         # Odległość od środka łazika do środka koła długość
         y=64
-        r=b/(2*tan(angle))
-        alpha1=atan(y/(r-x))
-        alpha2=atan(y/(r+x))
-        r1=sqrt((r-x)**2+y**2)
-        r2=sqrt((r+x)**2+y**2)
-        ra=sqrt(r**2+(b/2)**2)
-        alpha1=(alpha1*7.2)/90
-        alpha2=(alpha2*7.2)/90
-        omega=speed/r
-        speed15=omega*r1
-        speed3=omega*(r-24.5)
-        speed4=omega*(r+24.5)
-        speed26=omega*r2
+        if angle!=0:
+            r=b/(2*tan(angle))
+            alpha1=atan(y/(r-x))
+            alpha2=atan(y/(r+x))
+            r1=sqrt((r-x)**2+y**2)
+            r2=sqrt((r+x)**2+y**2)
+            ra=sqrt(r**2+(b/2)**2)
+            alpha1=(alpha1*7.2)/90
+            alpha2=(alpha2*7.2)/90
+            omega=speed/r
+            speed15=omega*r1
+            speed3=omega*(r-24.5)
+            speed4=omega*(r+24.5)
+            speed26=omega*r2
 
         
         print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
