@@ -90,8 +90,8 @@ class Rover():
             speed3=speed
             speed4=speed
             speed26=speed
-         print(angle, alpha1, alpha2) 
-        #print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
+        print(angle, alpha1, alpha2) 
+
         if speed<5 and speed>-5:
             speed=0
 
