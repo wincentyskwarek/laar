@@ -62,7 +62,7 @@ class Rover():
         self.servo6.start(0)
 
     def go(self, angle, speed):
-        angle+=100
+        angle*=0.9
         #self.wheel26p.ChangeDutyCycle(100)
         b=100
         # Odległość od środka łazika do środka koła szerokość
