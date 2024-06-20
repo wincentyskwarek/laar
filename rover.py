@@ -69,18 +69,18 @@ class Rover():
         if angle<0:
             alpha1=angle
             alpha2=0.7*angle
-            speed15=speed*(100-abs(alpha1)*14.6)/100
+            speed15=speed
             speed26=speed
-            speed3=speed
+            speed3=speed*(100-abs(alpha1)*14.6)/100
             speed4=speed
 
         elif angle>0:
             alpha1=0.7*angle
             alpha2=angle
             speed15=speed
-            speed26=speed*(100-abs(alpha2)*14.6)/100
+            speed26=speed
             speed3=speed
-            speed4=speed
+            speed4=speed*(100-abs(alpha2)*14.6)/100
         else:
             alpha1=angle
             alpha2=angle
