@@ -79,8 +79,8 @@ class Rover():
             r1=sqrt((r-x)**2+y**2)
             r2=sqrt((r+x)**2+y**2)
             ra=sqrt(r**2+(b/2)**2)
-            #alpha1=(alpha1*7.2)/90
-            #alpha2=(alpha2*7.2)/90
+            alpha1=(alpha1*7.2)/90
+            alpha2=(alpha2*7.2)/90
             omega=speed/r
             speed15=omega*r1
             speed3=omega*(r-24.5)
@@ -94,7 +94,12 @@ class Rover():
             speed4=speed
             speed26=speed
             r=1000
-        print(angle, r, alpha1, alpha2) 
+        
+        self.servo1.ChangeDutyCycle(7.5+alpha1)
+        self.servo2.ChangeDutyCycle(7.2+alpha2)
+        
+        self.servo5.ChangeDutyCycle(7.2-alpha1)
+        self.servo6.ChangeDutyCycle(7-alpha2)
 
 
         
