@@ -19,7 +19,7 @@ session = gps.gps(mode=gps.WATCH_ENABLE)
 #IBus.normalize(res[5], type="dial"),
 #IBus.normalize(res[6], type="dial")),
 #definicja pinu GPIO
-#Definicja pinów łazika
+#Definicja pinów łazika 
 #Silniki DC 
 LPrzod = 5          # Silnik koła lewego przód i tył obroty przód
 LTyl = 17           # Silnik koła lewego przód i tył obroty tył
