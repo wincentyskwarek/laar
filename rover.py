@@ -109,6 +109,10 @@ class Rover():
             self.wheel26t.ChangeDutyCycle(0)
             self.wheel4t.ChangeDutyCycle(0)                       
         else:
+            speed15*=speed
+            speed3*=speed
+            speed4*=speed
+            speed26*=speed
             speed15r=0-speed15
             speed26r=0-speed26
             speed3r=0-speed3
