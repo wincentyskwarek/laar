@@ -64,11 +64,11 @@ class Rover():
     def go(self, angle, speed):
         angle*=0.9
         #self.wheel26p.ChangeDutyCycle(100)
-        b=100
+        b=1
         # Odległość od środka łazika do środka koła szerokość
-        x=41.25
+        x=0.4125
         # Odległość od środka łazika do środka koła długość
-        y=64
+        y=0.64
         if angle!=0:
             r=b/(2*tan(angle))
             alpha1=degrees(atan(y/(r-x)))
