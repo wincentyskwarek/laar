@@ -1,4 +1,4 @@
-import math
+from math import *
 import RPi.GPIO as GPIO
 
 
@@ -63,55 +63,50 @@ class Rover():
 
     def go(self, angle, speed):
         #self.wheel26p.ChangeDutyCycle(100)
+        b=100
+        # Odległość od środka łazika do środka koła szerokość
+        x=41.25
+        # Odległość od środka łazika do środka koła długość
+        y=64
+        r=b/(2*tan(angle))
+        alpha1=atan(y/(r-x))
+        alpha2=atan(y/(r+x))
+        r1=sqrt((r-x)**2+y**2)
+        r2=sqrt((r+x)**2+y**2)
+        ra=sqrt(r**2+(b/2)**2)
+        alpha1=(alpha1*7.2)/90
+        alpha2=(alpha2*7.2)/90
+        omega=speed/r
+        speed15=omega*r1
+        speed3=omega*(r-24.5)
+        speed4=omega*(r+24.5)
+        speed26=omega*r2
+
         if speed<5 and speed>-5:
             speed=0
+    """
         if speed>0:
-            print("")
-            self.wheel15p.ChangeDutyCycle(speed)
-            self.wheel3p.ChangeDutyCycle(speed)
-            self.wheel26p.ChangeDutyCycle(speed)
-            self.wheel4p.ChangeDutyCycle(speed)
+            self.wheel15p.ChangeDutyCycle(speed15)
+            self.wheel3p.ChangeDutyCycle(speed3)
+            self.wheel26p.ChangeDutyCycle(speed26)
+            self.wheel4p.ChangeDutyCycle(speed4)
             self.wheel15t.ChangeDutyCycle(0)
             self.wheel3t.ChangeDutyCycle(0)
             self.wheel26t.ChangeDutyCycle(0)
-            self.wheel4t.ChangeDutyCycle(0)
-            if angle == -100:
-                self.wheel3p.ChangeDutyCycle(0) # LSrodekP wylacz
-                self.wheel3t.ChangeDutyCycle(speed) # LSrodekT wlacz
-                self.wheel4t.ChangeDutyCycle(0) # PSrodekT wylacz
-                self.wheel4p.ChangeDutyCycle(speed) # PSrodekP wlacz
-            elif angle == 100 :
-                self.wheel3p.ChangeDutyCycle(speed) # LSrodekP wlacz
-                self.wheel3t.ChangeDutyCycle(0) # LSrodekT wylacz
-                self.wheel4t.ChangeDutyCycle(speed) # PSrodekT wlacz
-                self.wheel4p.ChangeDutyCycle(0) # PSrodekP wylacz
-            else:
-                pass
-                
-                
+            self.wheel4t.ChangeDutyCycle(0)                       
         else:
-            print("")
-            speed=-speed
-            self.wheel15t.ChangeDutyCycle(speed)
-            self.wheel3t.ChangeDutyCycle(speed)
-            self.wheel26t.ChangeDutyCycle(speed)
-            self.wheel4t.ChangeDutyCycle(speed)
+            speed15=-speed15
+            speed26=-speed26
+            speed3=-speed3
+            speed4=-speed4
+            self.wheel15t.ChangeDutyCycle(speed15)
+            self.wheel3t.ChangeDutyCycle(speed3)
+            self.wheel26t.ChangeDutyCycle(speed26)
+            self.wheel4t.ChangeDutyCycle(speed4)
             self.wheel15p.ChangeDutyCycle(0)
             self.wheel3p.ChangeDutyCycle(0)
             self.wheel26p.ChangeDutyCycle(0)
             self.wheel4p.ChangeDutyCycle(0)
-            if angle == -100:
-                self.wheel3t.ChangeDutyCycle(0) # LSrodekT wylacz
-                self.wheel3p.ChangeDutyCycle(speed) # LSrodekP wlacz
-                self.wheel4p.ChangeDutyCycle(0) # PSrodekP wylacz
-                self.wheel4t.ChangeDutyCycle(speed) # PSrodekT wlacz
-            elif angle == 100: 
-                self.wheel3p.ChangeDutyCycle(0) # LSrodekP wylacz
-                self.wheel3t.ChangeDutyCycle(speed) # LSrodekT wlacz
-                self.wheel4t.ChangeDutyCycle(0) # PSrodekT wylacz
-                self.wheel4p.ChangeDutyCycle(speed) # PSrodekP wlacz
-            else:
-                pass
 
                 
 
@@ -120,27 +115,14 @@ class Rover():
         
         
 
-        self.servo1.ChangeDutyCycle(7.5+angle/2.5)
-        self.servo2.ChangeDutyCycle(7.2+angle/2.5)
+        self.servo1.ChangeDutyCycle(7.5+alpha1)
+        self.servo2.ChangeDutyCycle(7.2+alpha2)
         
-        self.servo5.ChangeDutyCycle(7.2-angle/2.5)
-        self.servo6.ChangeDutyCycle(7-angle/2.5)
+        self.servo5.ChangeDutyCycle(7.2-alpha1)
+        self.servo6.ChangeDutyCycle(7-alpha2)"""
         
 
-        # Wheel 1 and wheel 5
-        
-        #angle1=int(angle1*Rover.servoAngle)//100
-        #self.k15.ChangeDutyCycle(abs(angle1))
-        # Wheel 2 and wheel 6
-       
-        #angle1=int(angle2*Rover.servoAngle)//100
-        #self.k26.ChangeDutyCycle(abs(angle2))
-        # Wheel 3
-        
-        # Wheel 4
-
-        
-#    print((angle, angle2, angle3, angle4, angle5, angle6) )
+        print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
 @staticmethod
 def normalize (value):
     return 0
