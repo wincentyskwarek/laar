@@ -56,7 +56,7 @@ while True:
         # zmiana kierunku srodkowego kola wzgledem katu obrotu:
 
         
-
+ 
 
     else:
         print ("Status offline {}".format(res[0]))
