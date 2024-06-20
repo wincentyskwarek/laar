@@ -66,7 +66,7 @@ class Rover():
         if speed<5 and speed>-5:
             speed=0
         angle*=0.8
-        speed3 *= 0.9
+        speed *= 0.9
         #self.wheel26p.ChangeDutyCycle(100)
         b=1
         # Odległość od środka łazika do środka koła szerokość
@@ -91,7 +91,7 @@ class Rover():
             alpha1=(angle*7.2)/90
             alpha2=(angle*7.2)/90
             speed15=speed
-            speed3=speed
+            speed3=0.9*speed
             speed4=speed
             speed26=speed
             r=1000
