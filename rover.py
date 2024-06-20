@@ -90,7 +90,7 @@ class Rover():
         else:
             alpha1=(angle*7.2)/90
             alpha2=(angle*7.2)/90
-            speed15=speed
+            speed15=0.9*speed
             speed3=0.9*speed
             speed4=speed
             speed26=speed
