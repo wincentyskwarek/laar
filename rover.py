@@ -71,8 +71,8 @@ class Rover():
         y=64
         if angle!=0:
             r=b/(2*tan(angle))
-            alpha1=atan(y/(r-x))
-            alpha2=atan(y/(r+x))
+            alpha1=degrees(atan(y/(r-x)))
+            alpha2=degrees(atan(y/(r+x)))
             r1=sqrt((r-x)**2+y**2)
             r2=sqrt((r+x)**2+y**2)
             ra=sqrt(r**2+(b/2)**2)
