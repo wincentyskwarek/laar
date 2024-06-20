@@ -122,7 +122,7 @@ class Rover():
         self.servo6.ChangeDutyCycle(7-alpha2)"""
         
 
-    print(speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
+    print( speed15, speed26, speed3, speed4, alpha1, alpha2) 
 @staticmethod
 def normalize (value):
     return 0
