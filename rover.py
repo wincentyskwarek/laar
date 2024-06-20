@@ -72,7 +72,7 @@ class Rover():
         x=0.4125
         # Odległość od środka łazika do środka koła długość
         y=0.64
-        if speed >99 or speed = 99:
+        if speed >99 or speed == 99:
             speed=99
         if angle!=0:
             r=b/(0.5*tan(radians(angle)))
