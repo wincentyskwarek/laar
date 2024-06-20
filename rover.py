@@ -83,7 +83,13 @@ class Rover():
             speed3=omega*(r-24.5)
             speed4=omega*(r+24.5)
             speed26=omega*r2
-
+        else:
+            alpha1=(angle*7.2)/90
+            alpha2=(angle*7.2)/90
+            speed15=speed
+            speed3=speed
+            speed4=speed
+            speed26=speed
         
         print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
         if speed<5 and speed>-5:
