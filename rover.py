@@ -81,7 +81,7 @@ class Rover():
         speed3=omega*(r-24.5)
         speed4=omega*(r+24.5)
         speed26=omega*r2
-        
+
         if speed<5 and speed>-5:
             speed=0
     """
@@ -110,7 +110,7 @@ class Rover():
 
                 
 
-        
+        angle=(angle)/(14.29)
 
         
         
@@ -120,9 +120,9 @@ class Rover():
         
         self.servo5.ChangeDutyCycle(7.2-alpha1)
         self.servo6.ChangeDutyCycle(7-alpha2)"""
-    angle=(angle)/(14.29)
+        
 
-    print(angle,speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
+    print(speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
 @staticmethod
 def normalize (value):
     return 0
