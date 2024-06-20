@@ -1,5 +1,6 @@
 from math import *
 import RPi.GPIO as GPIO
+import tme
 
 
 class Rover():
@@ -95,7 +96,8 @@ class Rover():
 
         if speed<5 and speed>-5:
             speed=0
-
+        time.sleep(1)
+        
         
 
 @staticmethod
