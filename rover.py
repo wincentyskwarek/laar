@@ -63,6 +63,8 @@ class Rover():
         self.servo6.start(0)
 
     def go(self, angle, speed):
+        if speed<5 and speed>-5:
+            speed=0
         angle*=0.9
         #self.wheel26p.ChangeDutyCycle(100)
         b=1
@@ -94,9 +96,8 @@ class Rover():
             r=1000
         print(angle, r, alpha1, alpha2) 
 
-        if speed<5 and speed>-5:
-            speed=0
-        time.sleep(1)
+
+        time.sleep(0.5)
         
         
 
