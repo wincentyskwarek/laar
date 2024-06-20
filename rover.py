@@ -93,10 +93,10 @@ class Rover():
         else:
             alpha1=(angle*7.2)/90
             alpha2=(angle*7.2)/90
-            #speed15*=speed
-            #speed3*=speed
-            #speed4*=speed
-            #speed26*=speed
+            speed15*=speed
+            speed3*=speed
+            speed4*=speed
+            speed26*=speed
             r=1000
         
         if speed>0:
@@ -109,14 +109,14 @@ class Rover():
             self.wheel26t.ChangeDutyCycle(0)
             self.wheel4t.ChangeDutyCycle(0)                       
         else:
-            speed15=-speed15
-            speed26=-speed26
-            speed3=-speed3
-            speed4=-speed4
-            self.wheel15t.ChangeDutyCycle(speed15)
-            self.wheel3t.ChangeDutyCycle(speed3)
-            self.wheel26t.ChangeDutyCycle(speed26)
-            self.wheel4t.ChangeDutyCycle(speed4)
+            speed15r=-speed15
+            speed26r=-speed26
+            speed3r=-speed3
+            speed4r=-speed4
+            self.wheel15t.ChangeDutyCycle(speed15r)
+            self.wheel3t.ChangeDutyCycle(speed3r)
+            self.wheel26t.ChangeDutyCycle(speed26r)
+            self.wheel4t.ChangeDutyCycle(speed4r)
             self.wheel15p.ChangeDutyCycle(0)
             self.wheel3p.ChangeDutyCycle(0)
             self.wheel26p.ChangeDutyCycle(0)
