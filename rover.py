@@ -94,9 +94,9 @@ class Rover():
             alpha1=(angle*7.2)/90
             alpha2=(angle*7.2)/90
             #speed15*=speed
-            speed3*=speed
+            #speed3*=speed
             #speed4*=speed
-            speed26*=speed
+            #speed26*=speed
             r=1000
         
         if speed>0:
