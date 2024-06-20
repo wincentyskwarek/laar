@@ -65,35 +65,20 @@ class Rover():
     def go(self, angle, speed):
         if speed<5 and speed>-5:
             speed=0
-        angle*=0.8
-        #self.wheel26p.ChangeDutyCycle(100)
-        b=1
-        # Odległość od środka łazika do środka koła szerokość
-        x=0.4125
-        # Odległość od środka łazika do środka koła długość
-        y=0.64
-        if speed > 95 or speed == 95:
-            speed=95
-        if speed < -95 or speed == -95:
-            speed= -95
-        if angle!=0:
-            r=b/(0.5*tan(radians(angle)))
-            alpha1=degrees(atan(y/(r-x)))
-            alpha2=degrees(atan(y/(r+x)))
-            r1=sqrt((r-x)**2+y**2)
-            r2=sqrt((r+x)**2+y**2)
-            ra=sqrt(r**2+(b/2)**2)
-            alpha1=(alpha1*7.2)/90
-            alpha2=(alpha2*7)/90
-            omega=speed/r
-            speed15=omega*r1
-            speed3=omega*(r-24.5)
-            speed4=omega*(r+24.5)
-            speed26=omega*r2
+        angle/=14.6
+        if angle<0:
+            alpha1=angle
+            alpha2=0.7*angle
+        elif angle>0:
+            alpha1=0.7*angle
+            alpha2=angle
         else:
-            alpha1=(angle*7.2)/90
-            alpha2=(angle*7.2)/90
-            r=1000
+            alpha1=angle
+            alpha2=angle
+        speed15=speed*(100-abs(alpha1*14.6))/100
+        speed26=speed*(100-abs(alpha2*14.6))/100
+        speed3=speed*(100-abs(alpha1*14.6))/100
+        speed4=speed*(100-abs(alpha2*14.6))/100
         
         if speed>0:
             self.wheel15p.ChangeDutyCycle(speed15)
@@ -105,10 +90,6 @@ class Rover():
             self.wheel26t.ChangeDutyCycle(0)
             self.wheel4t.ChangeDutyCycle(0)                       
         else:
-            speed15*=speed
-            speed3*=speed
-            speed4*=speed
-            speed26*=speed
             speed15r=0-speed15
             speed26r=0-speed26
             speed3r=0-speed3
