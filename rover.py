@@ -70,14 +70,14 @@ class Rover():
         # Odległość od środka łazika do środka koła długość
         y=0.64
         if angle!=0:
-            r=b/(2*tan(angle))
+            r=b/(2*tan(radians(angle)))
             alpha1=degrees(atan(y/(r-x)))
             alpha2=degrees(atan(y/(r+x)))
             r1=sqrt((r-x)**2+y**2)
             r2=sqrt((r+x)**2+y**2)
             ra=sqrt(r**2+(b/2)**2)
-            alpha1=(alpha1*7.2)/90
-            alpha2=(alpha2*7.2)/90
+            #alpha1=(alpha1*7.2)/90
+            #alpha2=(alpha2*7.2)/90
             omega=speed/r
             speed15=omega*r1
             speed3=omega*(r-24.5)
@@ -90,44 +90,11 @@ class Rover():
             speed3=speed
             speed4=speed
             speed26=speed
-        
-        print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
+         print(angle, alpha1, alpha2) 
+        #print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
         if speed<5 and speed>-5:
             speed=0
-        if speed>0:
-            self.wheel15p.ChangeDutyCycle(speed15)
-            self.wheel3p.ChangeDutyCycle(speed3)
-            self.wheel26p.ChangeDutyCycle(speed26)
-            self.wheel4p.ChangeDutyCycle(speed4)
-            self.wheel15t.ChangeDutyCycle(0)
-            self.wheel3t.ChangeDutyCycle(0)
-            self.wheel26t.ChangeDutyCycle(0)
-            self.wheel4t.ChangeDutyCycle(0)                       
-        else:
-            speed15=-speed15
-            speed26=-speed26
-            speed3=-speed3
-            speed4=-speed4
-            self.wheel15t.ChangeDutyCycle(speed15)
-            self.wheel3t.ChangeDutyCycle(speed3)
-            self.wheel26t.ChangeDutyCycle(speed26)
-            self.wheel4t.ChangeDutyCycle(speed4)
-            self.wheel15p.ChangeDutyCycle(0)
-            self.wheel3p.ChangeDutyCycle(0)
-            self.wheel26p.ChangeDutyCycle(0)
-            self.wheel4p.ChangeDutyCycle(0)
 
-           
-
-
-        
-        
-
-        self.servo1.ChangeDutyCycle(7.5+alpha1)
-        self.servo2.ChangeDutyCycle(7.2+alpha2)
-        
-        self.servo5.ChangeDutyCycle(7.2+alpha1)
-        self.servo6.ChangeDutyCycle(7+alpha2)
         
 
 @staticmethod
