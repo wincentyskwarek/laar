@@ -101,7 +101,7 @@ class Rover():
         
         if speed>0:
             self.wheel15p.ChangeDutyCycle(speed15)
-            self.wheel3p.ChangeDutyCycle(speed3)
+            self.wheel3p.ChangeDutyCycle(0-speed3)
             self.wheel26p.ChangeDutyCycle(speed26)
             self.wheel4p.ChangeDutyCycle(speed4)
             self.wheel15t.ChangeDutyCycle(0)
