@@ -71,7 +71,7 @@ class Rover():
             alpha2=0.7*angle
             speed15=speed
             speed26=speed
-            speed3=speed*(100-abs(alpha1)*14.6)/100
+            speed3=speed*(100-alpha1*14.6)/100
             speed4=speed
 
         elif angle>0:
@@ -80,7 +80,7 @@ class Rover():
             speed15=speed
             speed26=speed
             speed3=speed
-            speed4=speed*(100-abs(alpha2)*14.6)/100
+            speed4=speed*(100-alpha2*14.6)/100
         else:
             alpha1=angle
             alpha2=angle
@@ -91,25 +91,27 @@ class Rover():
         
         if speed>0:
             self.wheel15p.ChangeDutyCycle(speed15)
-            self.wheel3p.ChangeDutyCycle(speed3)
             self.wheel26p.ChangeDutyCycle(speed26)
-            self.wheel4p.ChangeDutyCycle(speed4)
             self.wheel15t.ChangeDutyCycle(0)
-            self.wheel3t.ChangeDutyCycle(0)
             self.wheel26t.ChangeDutyCycle(0)
-            self.wheel4t.ChangeDutyCycle(0)                       
+                      
         else:
-            speed15r=0-speed15
-            speed26r=0-speed26
-            speed3r=0-speed3
-            speed4r=0-speed4
-            self.wheel15t.ChangeDutyCycle(speed15r)
-            self.wheel3t.ChangeDutyCycle(speed3r)
-            self.wheel26t.ChangeDutyCycle(speed26r)
-            self.wheel4t.ChangeDutyCycle(speed4r)
+            self.wheel15t.ChangeDutyCycle(-speed15)      
+            self.wheel26t.ChangeDutyCycle(-speed26)
             self.wheel15p.ChangeDutyCycle(0)
-            self.wheel3p.ChangeDutyCycle(0)
             self.wheel26p.ChangeDutyCycle(0)
+
+        if speed3>0:
+            self.wheel3p.ChangeDutyCycle(speed3)
+            self.wheel3t.ChangeDutyCycle(0)
+        else:
+            self.wheel3t.ChangeDutyCycle(-speed3)
+            self.wheel3p.ChangeDutyCycle(0)
+        if speed4>0:
+            self.wheel4p.ChangeDutyCycle(speed4)
+            self.wheel4t.ChangeDutyCycle(0) 
+        else:
+            self.wheel4t.ChangeDutyCycle(-speed4)
             self.wheel4p.ChangeDutyCycle(0)
 
         self.servo1.ChangeDutyCycle(7.5+alpha1)
