@@ -97,7 +97,6 @@ class Rover():
         print(angle, r, alpha1, alpha2) 
 
 
-        time.sleep(0.5)
         
         
 
