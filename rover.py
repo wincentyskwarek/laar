@@ -84,6 +84,7 @@ class Rover():
 
         if speed<5 and speed>-5:
             speed=0
+        print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
     """
         if speed>0:
             self.wheel15p.ChangeDutyCycle(speed15)
@@ -122,7 +123,6 @@ class Rover():
         self.servo6.ChangeDutyCycle(7-alpha2)"""
         
 
-    print( speed15, speed26, speed3, speed4, alpha1, alpha2) 
 @staticmethod
 def normalize (value):
     return 0
