@@ -81,7 +81,7 @@ class Rover():
             speed26=speed
             speed3=speed
 
-            if angle<80:
+            if angle*14.6<80:
                 speed4=speed*(100-angle*14.6)/100
             else:
                 speed4=-speed*5*(angle+80)/100
