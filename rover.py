@@ -82,9 +82,10 @@ class Rover():
         speed4=omega*(r+24.5)
         speed26=omega*r2
 
+        
+        print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
         if speed<5 and speed>-5:
             speed=0
-        print(angle, speed, speed15, speed26, speed3, speed4, alpha1, alpha2) 
     """
         if speed>0:
             self.wheel15p.ChangeDutyCycle(speed15)
