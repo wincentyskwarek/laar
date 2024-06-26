@@ -52,7 +52,7 @@ while True:
         switch=IBus.normalize(res[5])
         predkosc=IBus.normalize(res[2])
         lazik.go(kat, predkosc)
-        print(f"kat: {kat}, predkosc: {predkosc},{switch}")
+        print(f"kat: {kat}, predkosc: {predkosc}, switch: {switch}")
         
         # zmiana kierunku srodkowego kola wzgledem katu obrotu:
 
