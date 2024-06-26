@@ -49,7 +49,7 @@ while True:
     res = ibus_in.read()
     if (res[0] == 1):
         kat=IBus.normalize(res[4])
-        switch=IBus.normalize(res[5])
+        switch=IBus.normalize(res[6])
         predkosc=IBus.normalize(res[2])
         lazik.go(kat, predkosc)
         print(f"kat: {kat}, predkosc: {predkosc}, switch: {switch}")
